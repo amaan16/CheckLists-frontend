@@ -1,0 +1,134 @@
+.header{
+    margin-top: 10px;
+    
+}
+
+.bgColor {
+  background-color: grey;
+  position: fixed;
+  padding-top:6px;
+  display: flex;
+  align-items: center;
+}
+
+.left-elements {
+  display: flex;
+  align-items: center;
+  justify-content: left !important;
+}
+
+.right-elements {
+  display: flex;
+  align-items: center;
+  justify-content: end !important;
+}
+
+.button-link {
+  cursor: pointer;
+  margin-right: 10px;
+  color: black;
+}
+
+.button-link::after{
+  color: black;
+}
+
+.AddButton{
+  /* padding-top: 2px !important; */
+  font-weight: 400 !important;
+  line-height: 1.5 !important;
+  font-size: 1.25rem !important;
+}
+
+.content {
+  /* align-items: center; */
+  display: flex;
+  justify-content: left;
+  min-width: 100%;
+  min-height: 100%;
+  flex-wrap: wrap;
+  border: 4px solid #ddd;
+  border-radius: 15px;
+  /* display: grid;
+  grid-template-columns: repeat(auto-fill, 300px); /* Adjust column width as needed */
+  /* gap: 2px;
+  min-width: 100%;
+  overflow-x: auto;  */
+}
+
+.notepad {
+  background-color: #fff;
+  border: 1px solid #ddd;
+  padding: 10px;
+  margin: 10px;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+  width: 280px;
+  border-radius: 5px;
+}
+
+h3 {
+  font-size: 18px;
+  margin: 0;
+  padding-bottom: 10px;
+}
+
+ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+li {
+  margin-bottom: 5px;
+}
+.inlineText {
+  display: flex;
+  justify-content: space-between;
+  /* align-items: center; */
+}
+
+.inlineText-noSpace {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.heading h3 {
+  margin: 0;
+}
+
+.eye {
+  margin-left: 10px;
+  margin-top: 5px;
+  cursor: pointer;
+}
+
+ol,
+ul {
+  padding-left: 0rem !important;
+}
+
+.round-add-button {
+  background-color: grey; /* Change the background color as desired */
+  color: white; /* Change the text color as desired */
+  border: none;
+  border-radius: 50%; /* Makes it round */
+  width: 40px; /* Adjust the width and height as needed for your design */
+  height: 40px;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* position: absolute;  */
+  bottom: 10px;
+  right: 10px;
+  font-size: 20px; /* Adjust the font size as needed */
+}
+
+.round-add-button:hover {
+  background-color: #0056b3; /* Change the hover background color as desired */
+}
+
+
+/* popup CSS */
+
+
