@@ -1,6 +1,6 @@
 import React, { useState, async } from "react";
 
-const TodoList = ({ index, todo, handlePrint, handleAddItemInData }) => {
+const TodoList = ({ index, todo, handleAddItemInData }) => {
   const [Todo, setTodo] = useState(todo);
   const [visibility, setVisibility] = useState(todo.display);
   const [items, setItems] = useState(todo.items);
@@ -12,7 +12,6 @@ const TodoList = ({ index, todo, handlePrint, handleAddItemInData }) => {
     setTimeout(() => {setItems(updatedItems);},250);
     // setItems(updatedItems);
     console.log(todo);
-    handlePrint();
   };
 
   //   console.log("index",index);
@@ -45,9 +44,9 @@ const TodoList = ({ index, todo, handlePrint, handleAddItemInData }) => {
   };
 
   return (
-    <div>
+    <div className="glass2">
     {visibility && (
-    <div className="notepad">
+    <div className="notepad glass">
       <div className="inlineText">
         <h3>{todo.nameOfTodo}</h3>
         <div className="eye">
@@ -57,7 +56,7 @@ const TodoList = ({ index, todo, handlePrint, handleAddItemInData }) => {
       <ul>
         {todo.items.map((item, index) => (
         item.Status === "No" ? (
-          <li index={index} className="left-elements">
+          <li index={index} className="left-elements overFlow">
             <input
               type="checkbox"
               id={`item-${index}`}
@@ -74,6 +73,7 @@ const TodoList = ({ index, todo, handlePrint, handleAddItemInData }) => {
 
       <div className="inlineText">
         <input
+        class="glass"
           type="text"
           placeholder="Enter new item"
           value={newItemName}

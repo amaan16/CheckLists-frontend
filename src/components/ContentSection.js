@@ -9,7 +9,7 @@ const ContentSection = ({data}) => {
   };
 
   return (
-    <div  className="content" >
+    <div  className="content glass2" >
       {data.todos.map((todo, index) => (
         <TodoList index={index} todo={todo}  handleAddItemInData = {handleAddItemInData}/> // Pass the todo object as a prop
       ))}
