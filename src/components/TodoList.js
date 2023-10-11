@@ -1,51 +1,56 @@
 import React, { useState, async } from "react";
+import GeneralServices from "../Services/GeneralServices";
 
-const TodoList = ({ index, todo, handleAddItemInData }) => {
+const TodoList = ({ index, todo, handleAddItemInData,userId }) => {
   const [Todo, setTodo] = useState(todo);
-  const [visibility, setVisibility] = useState(todo.display);
+  const [display, setDisplay] = useState(todo.display);
   const [items, setItems] = useState(todo.items);
   const [newItemName, setNewItemName] = useState("");
 
-  const handleItemStatusChange = (index, event) => {
+  const handleItemStatusChange = (itemIndex, event) => {
     const updatedItems = [...items];
-    updatedItems[index].Status = event.target.checked ? "Yes" : "No";
+    updatedItems[itemIndex].Status = event.target.checked ? "Yes" : "No";
     setTimeout(() => {setItems(updatedItems);},250);
     // setItems(updatedItems);
+    let req = {
+      userId : userId,
+      index : index,
+      itemIndex : itemIndex,
+      change : "Yes"
+    }
+    console.log("req: ",req);
+    const resp = GeneralServices.updateStatus(req);
     console.log(todo);
   };
 
-  //   console.log("index",index);
-  // console.log("Updated items", items);
   const handleAddItem = () => {
     if (newItemName.trim() !== "") {
       const newItem = {
         itemName: newItemName,
         Status: "No",
       };
-      console.log("newItem", newItem);
       handleAddItemInData(newItem, index);
       setNewItemName("");
-      console.log("Pre Updated items", items);
       const updatedItems = [...items, newItem];
       setItems(updatedItems);
-      console.log("Updated items", items);
-      //   console.log("Updated items in Todo", todo);
-      //   setNewItemName("");
     }
   };
 
-  const changeVisibility = () => {
-    console.log("todo:", todo);
+  function changeVisibility () {
     todo.display = false;
-    console.log("updated todo", todo);
-    setVisibility(todo.display)
-    // setVisibility(false);
-    // handlePrint();
+    let req = {
+      userId : userId,
+      index : index,
+      editedTodo : todo
+    }
+    console.log("Req: ",req);
+    const resp = GeneralServices.updateTodo(req);  
+    setDisplay(false);
   };
 
   return (
     <div className="glass2">
-    {visibility && (
+    {todo.display && (
     <div className="notepad glass">
       <div className="inlineText">
         <h3>{todo.nameOfTodo}</h3>
