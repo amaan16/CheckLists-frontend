@@ -291,10 +291,11 @@ ul {
 
 .custom-modal {
   position: absolute;
-  width: 60%;
-  height: 50%;
-  top: 20%;
-  left: 20%;
+  min-width: 40%;
+  min-height: 30%;
+  top: 30%;
+  left: 50%;
+  transform: translate(-50%, -50%);
   margin: auto;
   background: white;
   border: 1px solid #ccc;
@@ -308,4 +309,30 @@ ul {
 .modal-header {
   display: flex;
   justify-content: center !important;
+}
+
+.popup-Inputs{
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
+
+
+.down-elements{
+  position: absolute;
+  display: flex;
+  width: 90%;
+  justify-content: center;
+  top: 85%;
+}
+
+.down-elements button {
+  margin-left: 20px;
+  border-radius: 5px;
+  background: #2691d9;
+  color: #e9f4fb;
+}
+
+.cancel-button {
+  background: red !important;
+  color: white; /* Change text color if needed */
 }

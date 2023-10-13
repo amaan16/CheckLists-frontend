@@ -47,6 +47,19 @@ async function getTodos(req){
     }
 }
 
+async function addTodo(req){
+    try{
+        const response = await axios.post(`${localUrl}/todos/add`,req,{
+            headers : {
+                'Content-Type' : 'application/json',
+            }
+        })
+        return response.data;
+    }catch(error){
+        console.log(error);
+    }
+}
+
 
 async function updateTodo(req){
     try{
@@ -80,6 +93,7 @@ const GeneralServices = {
     authUser,
     newUser,
     getTodos,
+    addTodo,
     updateTodo,
     updateStatus
 };

@@ -37,8 +37,6 @@ function App() {
     }))
   }
 
-  console.log("afterChange:  ", data)
-
   const [isLoggedIn ,setLoggedIn] = useState(localStorage.getItem('isLoggedIn') === 'true');
 
   const updateLogIn = () => {
@@ -62,7 +60,7 @@ function App() {
           path=""
           element={
             <>
-              <Home data = {data} isLoggedIn = {isLoggedIn} initialData = {initialData} logOut = {logOut} />
+              <Home data = {data} isLoggedIn = {isLoggedIn} initialData = {initialData} logOut = {logOut} setData = {setData} />
             </>
           }
         />
