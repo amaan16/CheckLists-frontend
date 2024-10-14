@@ -35,7 +35,7 @@ html {
 }
 
 .right-elements {
-  display: flex;
+  /* display: flex; */
   right: 10px;
   position: absolute;
   align-items: center;
@@ -282,6 +282,26 @@ li {
   margin-left: 10px;
   margin-top: 5px;
   cursor: pointer;
+}
+
+.eye-icon{
+  cursor: pointer;
+}
+
+.todo-link {
+  display: flex;
+  /* justify-content: space-between; */
+  align-items: center;
+  text-decoration: none; /* Remove default underline for links */
+  /* padding: 10px; */
+}
+
+.todo-name {
+  flex-grow: 1; /* Grow to fill available space */
+}
+
+.sideNav-icons{
+  display: inline;
 }
 
 ol,

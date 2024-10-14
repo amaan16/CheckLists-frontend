@@ -48,6 +48,7 @@ async function getTodos(req){
 }
 
 async function addTodo(req){
+    console.log(req)
     try{
         const response = await axios.post(`${localUrl}/todos/add`,req,{
             headers : {
@@ -64,6 +65,20 @@ async function addTodo(req){
 async function updateTodo(req){
     try{
         const response = await axios.post(`${localUrl}/todos/edit`,req, {
+            headers : {
+                'Content-Type' : 'application/json',
+            }
+        })
+        console.log("response: ",response)
+        return response.data;
+    }catch(error){
+        console.log(error);
+    }
+}
+
+async function deleteTodo(req){
+    try{
+        const response = await axios.post(`${localUrl}/todos/remove`,req, {
             headers : {
                 'Content-Type' : 'application/json',
             }
@@ -95,7 +110,8 @@ const GeneralServices = {
     getTodos,
     addTodo,
     updateTodo,
-    updateStatus
+    updateStatus,
+    deleteTodo
 };
 
 export default GeneralServices;

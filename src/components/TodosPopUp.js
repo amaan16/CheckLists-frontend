@@ -26,10 +26,12 @@ const TodosPopUp = ({ isOpen, onRequestClose, updateData }) => {
     let todoName = selectedTodo;
     if (selectedTodo != "") {
       const userId = localStorage.getItem("userId");
-      if (selectedTodo == "Custom" && customTodoName != "") {
-        todoName = customTodoName;
-      }else{
+      if (selectedTodo == "Custom" ) {
+        if(customTodoName != ""){
+          todoName = customTodoName;
+        }else{
         return
+        }
       }
       let req = {
         userId: userId,

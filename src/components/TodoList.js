@@ -54,9 +54,9 @@ const TodoList = ({ index, todo, handleAddItemInData,userId }) => {
     <div className="notepad glass">
       <div className="inlineText">
         <h3>{todo.nameOfTodo}</h3>
-        <div className="eye">
+        {/* <div className="eye">
             <i className="material-icons" onClick={changeVisibility}>visibility</i>
-        </div>
+        </div> */}
       </div>
       <ul>
         {todo.items.map((item, index) => (

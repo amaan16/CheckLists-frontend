@@ -50,7 +50,7 @@ const Home = ({ data, isLoggedIn, initialData, logOut, setData }) => {
             updateData={updateData}
           />
           <Header2 data={data} logOut={logOut} openPopUp={openPopUp} />
-          <SideNav data={data} />
+          <SideNav data={data} setData= {setData}/>
           <ContentSection data={data} />
         </>
       ) : (
